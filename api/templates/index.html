@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laptop Price Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Laptop Price Prediction</h1>
+    <form method="post" action="/predict">
+        <label for="brand">Brand:</label>
+        <select name="brand" id="brand">
+            {% for brand in brands %}
+                <option value="{{ brand }}">{{ brand }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="processor_brand">Processor Brand:</label>
+        <select name="processor_brand" id="processor_brand">
+            {% for processor_brand in processor_brands %}
+                <option value="{{ processor_brand }}">{{ processor_brand }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="processor_name">Processor Name:</label>
+        <select name="processor_name" id="processor_name">
+            {% for processor_name in processor_names %}
+                <option value="{{ processor_name }}">{{ processor_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="processor_gnrtn">Processor Generation:</label>
+        <select name="processor_gnrtn" id="processor_gnrtn">
+            {% for processor_gnrtn in processor_gnrtns %}
+                <option value="{{ processor_gnrtn }}">{{ processor_gnrtn }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="ram_gb">RAM (GB):</label>
+        <select name="ram_gb" id="ram_gb">
+            {% for ram_gb in ram_gbs %}
+                <option value="{{ ram_gb }}">{{ ram_gb }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="ram_type">RAM Type:</label>
+        <select name="ram_type" id="ram_type">
+            {% for ram_type in ram_types %}
+                <option value="{{ ram_type }}">{{ ram_type }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="ssd">SSD (GB):</label>
+        <select name="ssd" id="ssd">
+            {% for ssd in ssds %}
+                <option value="{{ ssd }}">{{ ssd }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="hdd">HDD (GB):</label>
+        <select name="hdd" id="hdd">
+            {% for hdd in hdds %}
+                <option value="{{ hdd }}">{{ hdd }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="os">Operating System:</label>
+        <select name="os" id="os">
+            {% for os in oss %}
+                <option value="{{ os }}">{{ os }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="os_bit">OS Bit:</label>
+        <select name="os_bit" id="os_bit">
+            {% for os_bit in os_bits %}
+                <option value="{{ os_bit }}">{{ os_bit }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="graphic_card_gb">Graphic Card (GB):</label>
+        <select name="graphic_card_gb" id="graphic_card_gb">
+            {% for graphic_card_gb in graphic_card_gbs %}
+                <option value="{{ graphic_card_gb }}">{{ graphic_card_gb }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="weight">Weight (kg):</label>
+        <select name="weight" id="weight">
+            {% for weight in weights %}
+                <option value="{{ weight }}">{{ weight }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="warranty">Warranty (years):</label>
+        <select name="warranty" id="warranty">
+            {% for warranty in warranties %}
+                <option value="{{ warranty }}">{{ warranty }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="touchscreen">Touchscreen:</label>
+        <select name="touchscreen" id="touchscreen">
+            {% for touchscreen in touchscreens %}
+                <option value="{{ touchscreen }}">{{ touchscreen }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="msoffice">Microsoft Office:</label>
+        <select name="msoffice" id="msoffice">
+            {% for msoffice in msoffices %}
+                <option value="{{ msoffice }}">{{ msoffice }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="price_prediction">Predicted Price:</label>
+        <span id="price_prediction"></span>
+        <br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Add any additional scripts or CSS here -->
+</body>
+</html>
